@@ -1,3 +1,27 @@
 <ion-app>
+  <!-- Menu definir -->
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu Content</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle auto-hide="false">
+          <ion-item routerLink="/login">
+            <ion-icon slot="start" name="log-in"></ion-icon>
+            <ion-label>Login</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle auto-hide="false">
+          <ion-item routerLink="/register">
+            <ion-icon slot="start" name="person-add"></ion-icon>
+            <ion-label>Register</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
   <ion-router-outlet></ion-router-outlet>
 </ion-app>
