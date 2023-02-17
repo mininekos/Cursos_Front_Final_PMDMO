@@ -1,0 +1,7 @@
+{
+  "name": "Cursos_Front_Final_PMDMO",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
