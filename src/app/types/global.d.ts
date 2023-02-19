@@ -1,26 +1,12 @@
 export {};
 
 declare global {
-  /**
-   * Now declare things that go in the global namespace,
-   * or augment existing declarations in the global namespace.
-   */
 
   type Usuario = {
     name: string;
     dni: string;
     email: string;
     tlf: string;
-  };
-  type UsuarioRegister = {
-    usuario: Usuario;
-    password: string;
-    confirmPassword:string;
-    };
-
-  type UsuarioLogin = {
-    usuario: Usuario;
-    token: string;
   };
 
   type Curso = {
@@ -29,4 +15,24 @@ declare global {
     autor: string;
     precio: number;
   };
+
+  type Compra = {
+    usuario: Usuario;
+    curso: Curso;
+    pecio: number; 
+  };
+
+  type TokenUsuario={
+    usuario: Usuario;
+    token: string;
+  }
+
+  type Status = {
+    status: string;
+  };
+
+  type ErrorApi = {
+    error: string;
+  };
+
 }

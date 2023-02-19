@@ -12,33 +12,35 @@
     <ion-card-header>
       <ion-card-title>Register</ion-card-title>
     </ion-card-header>
-    <ion-card-content>
-      <ion-item>
-        <ion-label position="floating">Name</ion-label>
-        <ion-input type="text" [(ngModel)]="usuarioRegistro.usuario.name"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">DNI</ion-label>
-        <ion-input type="text" [(ngModel)]="usuarioRegistro.usuario.dni"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Email</ion-label>
-        <ion-input type="email" [(ngModel)]="usuarioRegistro.usuario.email"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Telefono</ion-label>
-        <ion-input type="text" [(ngModel)]="usuarioRegistro.usuario.tlf"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Password</ion-label>
-        <ion-input type="password" [(ngModel)]="usuarioRegistro.password"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Confirm Password</ion-label>
-        <ion-input type="password" [(ngModel)]="usuarioRegistro.confirmPassword"></ion-input>
-      </ion-item>
-      <ion-button expand="block" (click)="register()">Register</ion-button>
-    </ion-card-content>
+    <form  [formGroup]="formRegister">
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input type="text" formControlName="formNombre"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">DNI</ion-label>
+          <ion-input type="text" formControlName="formDni"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="email" formControlName="formEmail"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Telefono</ion-label>
+          <ion-input type="text" formControlName="formTelefono"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" formControlName="formPassword"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Confirmar Contraseña</ion-label>
+          <ion-input type="password" formControlName="formPassword2"></ion-input>
+        </ion-item>
+        <ion-button expand="block" (click)="register()">Register</ion-button>
+      </ion-card-content>
+    </form>
   </ion-card>
 
 </ion-content>
