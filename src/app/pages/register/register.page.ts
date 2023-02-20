@@ -69,7 +69,7 @@ export class RegisterPage implements OnInit {
 
   crearComponentes() {
     this.formNombre=new FormControl('',[Validators.required]);
-    this.formDni=new FormControl('',[Validators.pattern('[0-9]{8}[A-Z]'),Validators.required]);
+    this.formDni=new FormControl('',[Validators.pattern('[0-9]{8}[A-Z a-z]'),Validators.required]);
     this.formEmail=new FormControl('',[Validators.required,Validators.email]);
     this.formTelefono=new FormControl('',[Validators.pattern('[0-9]{9}')]);
     this.formPassword=new FormControl('',[Validators.required,Validators.minLength(8)]);
