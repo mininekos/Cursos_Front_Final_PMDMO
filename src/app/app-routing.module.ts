@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { ComprobarTokenGuard } from './Guards/comprobar-token.guard';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
-  },
-  {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'tabs',
     pathMatch: 'full'
   },
   {
@@ -18,12 +15,15 @@ const routes: Routes = [
   {
     path: 'register',
     loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
-  },  {
+  },
+  {
     path: 'tabs',
-    loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule)
+    canActivate: [ComprobarTokenGuard],
+    loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule),
   },
   {
     path: 'gestion',
+    canActivate: [ComprobarTokenGuard],
     loadChildren: () => import('./pages/gestion/gestion.module').then( m => m.GestionPageModule)
   },
 

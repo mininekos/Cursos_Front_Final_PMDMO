@@ -16,6 +16,11 @@ const routes: Routes = [
         path: 'cursos-comprados',
         loadChildren: () => import('./cursos-comprados/cursos-comprados.module').then( m => m.CursosCompradosPageModule)
       },
+      {
+        path: '',
+        redirectTo: '/tabs/lista-cursos',
+        pathMatch: 'full' 
+      }
     ]
   },
   
